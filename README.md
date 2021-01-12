@@ -19,3 +19,9 @@ Study Algorithm with Hello Coding Algorithm
 - push & pop
 - stack
 - Call stack
+
+## Quick Sort
+
+- divide-and-conquer
+- general technique
+- quick sort
