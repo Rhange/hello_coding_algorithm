@@ -20,8 +20,15 @@ Study Algorithm with Hello Coding Algorithm
 - stack
 - Call stack
 
-## Quick Sort
+## 04 Quick Sort
 
 - divide-and-conquer
 - general technique
-- quick sort
+- quick sort (O(n \* log n))
+
+## 05 Hash Table
+
+- Method
+- Collision
+- Hash function
+- Structure
