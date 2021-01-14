@@ -46,3 +46,10 @@ Study Algorithm with Hello Coding Algorithm
 - Weighted graph
 - Diijkstra's algorithm ( shortest path for weighted graph)
 - Diijkstra's algorithm can't be used when cycle be
+
+## Greedy algorithm
+
+- 불가능한 문제, 빠른 알고리즘 해법이 존재하지 않는 NP-완전문제
+- 빠른 알고리즘을 찾느라 시간 낭비하지 않도록 문제 해결이 불가능한지 아닌지 파악하는 방법
+- NP-완전 문제에 대한 간략한 해법을 빨리 구할 수 있는 '근사 알고리즘'
+- 탐욕 알고리즘(greedy algorithm)
