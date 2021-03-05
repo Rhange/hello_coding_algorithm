@@ -7,10 +7,12 @@ graph["B"] = []
 graph["C"] = ["B", "D"]
 graph["D"] = ["F"]
 
+
 def search(start):
     search_queue = deque()
     search_queue += graph[start]
     searched = []
+
     while search_queue:
         position = search_queue.popleft()
         if not position in searched:

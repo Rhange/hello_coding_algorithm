@@ -1,3 +1,5 @@
+from pprint import pprint
+
 graph = {}
 
 graph["you"] = ["alice", "bob", "claire"]
@@ -8,3 +10,6 @@ graph["anuj"] = []
 graph["peggy"] = []
 graph["tom"] = []
 graph["jonny"] = []
+
+pprint(graph)
+print(graph["you"])
