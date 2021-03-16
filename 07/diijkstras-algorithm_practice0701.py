@@ -1,3 +1,5 @@
+from pprint import pprint
+
 # graph 생성 파트
 graph = {}
 
@@ -22,7 +24,7 @@ graph["d"]["fin"] = 1
 
 graph["fin"] = {}
 
-print(graph)
+# pprint(graph)
 
 # costs part
 costs = {}
@@ -49,13 +51,13 @@ processed = []
 
 # 메인
 
-## 가장 싼 노드 가져오기
+## 가장 낮은 가중치 노드 가져오기
 def find_lowest_cost_node(costs):
     lowest_cost = float("inf")
     lowest_cost_node = None
     for node in costs:
         cost = costs[node]
-        if cost < lowest_cost and node not in processed:    # processed에 없어야 한다!
+        if cost < lowest_cost and node not in processed:  # processed에 없어야 한다!
             lowest_cost = cost
             lowest_cost_node = node
 
@@ -67,18 +69,30 @@ node = find_lowest_cost_node(costs)
 while node is not None:
     cost = costs[node]
     neighbors = graph[node]
-   
+
     for n in neighbors.keys():
         new_cost = cost + neighbors[n]
         if costs[n] > new_cost:
             costs[n] = new_cost
             parents[n] = node
-    
+
     processed.append(node)
 
-    print(f"costs => {costs}", f"parents => {parents}", f"processed => {processed}")
+    # pprint(f"costs => {costs}")
+    # pprint(f"parents => {parents}")
+    # pprint(f"processed => {processed}")
 
     node = find_lowest_cost_node(costs)
 
 # print(f"costs hash table => {costs}")
 # print(f"parents hash table => {parents}")
+
+shortest_path_weight = "fin"
+node = parents["fin"]
+while True:
+    shortest_path_weight = f"{node}-" + shortest_path_weight
+    node = parents[node]
+    if node is "start":
+        shortest_path_weight = "start-" + shortest_path_weight
+        break
+print(shortest_path_weight)

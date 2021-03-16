@@ -1,26 +1,30 @@
+"""
+1. Graph 모형 해시 테이블
+"""
+
 graph = {}  # 메인 해시 테이블 생성
 
-graph["start"] = {} # 또 다른 해시 테이블 생성
+graph["start"] = {}  # 또 다른 해시 테이블 생성
 graph["start"]["a"] = 6
 graph["start"]["b"] = 2
 
-print(graph["start"].keys())
+print(graph["start"].keys())  # 출발점의 모든 이웃값 확인
 print(graph["start"]["a"])  # a node로 가는 edge의 weight
 print(graph["start"]["b"])  # b node로 가는 edge의 weight
 
 # 그래프에 있는 나머지 node들과 그 neighbor들도 추가
 graph["a"] = {}
-graph["a"]["fin"] = 1
+graph["a"]["fin"] = 1  # a의 아웃은 도착점(fin) 뿐이다.
 
 graph["b"] = {}
 graph["b"]["a"] = 3
 graph["b"]["fin"] = 5
 
-graph["fin"] = {}   # 도착점은 neighbor가 없다.
+graph["fin"] = {}  # 도착점은 neighbor가 없다.
 
 
 """
-각 node의 가격을 저장하는 해시 테이블
+2. 각 node의 가격(weight)을 저장하는 해시 테이블
 """
 
 # 가격을 모르는 node는 가격을 무한대로 둔다.
@@ -35,7 +39,7 @@ costs["b"] = 2
 costs["fin"] = infinity
 
 """
-부모를 나타내는 해시 테이블
+3. 각 node의 부모(parent)를 나타내는 해시 테이블
 """
 
 parents = {}
@@ -54,6 +58,7 @@ processed = []
 메인 코드
 """
 
+
 def find_lowest_cost_node(costs):
     lowest_cost = float("inf")
     lowest_cost_node = None
@@ -65,8 +70,9 @@ def find_lowest_cost_node(costs):
 
     return lowest_cost_node
 
-node = find_lowest_cost_node(costs) # 아직 처리하지 않은 가장 싼 정점을 찾는다.
-while node is not None: # 모든 정점을 처리하면 반복문 종료
+
+node = find_lowest_cost_node(costs)  # 아직 처리하지 않은 가장 싼 정점을 찾는다.
+while node is not None:  # 모든 정점을 처리하면 반복문 종료
     cost = costs[node]
     neighbors = graph[node]
     for n in neighbors.keys():
